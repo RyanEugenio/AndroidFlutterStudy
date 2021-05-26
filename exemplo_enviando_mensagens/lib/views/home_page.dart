@@ -9,6 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +32,13 @@ class _HomePageState extends State<HomePage> {
             ),
             TextButton(
                 onPressed: () {
-                  _sendSnackBar('snackkk rapaiz', color: Colors.brown);
+                  _sendSnackBar('snack barrrr', color: Colors.brown);
                 },
                 child:  Text('Enviar snack')
             ),
             TextButton(
                 onPressed: () {
-                  _sendAlertDialog(context, 'oi', 'msg');
+                  _sendAlertDialog(context, 'Alert', 'msg');
                 },
                 child: Text('Bora dale alert'),
             ),
