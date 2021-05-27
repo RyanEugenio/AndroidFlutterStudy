@@ -10,6 +10,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  final myController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,16 +25,19 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Teste rapidão'),
+            TextField(
+              controller: myController,
+            ),
             TextButton(
                 onPressed: () {
-                  _sendToast('Toast 1', color: Colors.lime);
+                  _sendToast(myController.text, color: Colors.lime);
                   _sendToast('Toast 2');
                 },
                 child: Text('Send Toast')
             ),
             TextButton(
                 onPressed: () {
-                  _sendSnackBar('snack barrrr', color: Colors.brown);
+                  _sendSnackBar(myController.text, color: Colors.brown);
                 },
                 child:  Text('Enviar snack')
             ),
@@ -81,5 +86,11 @@ class _HomePageState extends State<HomePage> {
       ],
     );
     showDialog(context: context, builder: (BuildContext context) {return alert;});
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    myController.dispose();
+    super.dispose();
   }
 }
