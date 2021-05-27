@@ -43,17 +43,6 @@ class _HomeState extends State<Home> {
           itemBuilder: (BuildContext context, int index) {
             return list[index];
           },
-          // children: [
-          //   TextField(
-          //     controller: myController,
-          //   ),
-          //   ElevatedButton(
-          //       onPressed: (){
-          //         // addList();
-          //       },
-          //       child: Text('Button')
-          //   ),
-          // ],
         ),
       ),
     );
@@ -64,9 +53,7 @@ class _HomeState extends State<Home> {
       body: Center(
         child: Column(
           children: [
-            TextField(
-              controller: myController,
-            ),
+            _widgetTextField(),
             ElevatedButton(
                 onPressed: () {
                   addList();
@@ -79,18 +66,33 @@ class _HomeState extends State<Home> {
     );
   }
 
+
+  Widget _tab3() {
+    return ListView(
+      padding: const EdgeInsets.all(8),
+      children: <Widget>[
+        ListTile( title: Text("Battery Full"),subtitle: Text("The battery is full."),leading: CircleAvatar(backgroundImage: AssetImage('assets/images/whatsapp.png'),),trailing: Icon(Icons.star)),
+        ListTile( title: Text("Anchor"),subtitle: Text("Lower the anchor."), leading: Icon(Icons.anchor), trailing: Icon(Icons.star)),
+        ListTile( title: Text("Alarm"),subtitle: Text("This is the time."), leading: Icon(Icons.access_alarm), trailing: Icon(Icons.star)),
+        ListTile( title: Text("Ballot"),subtitle: Text("Cast your vote."), leading: Icon(Icons.ballot), trailing: Icon(Icons.star)),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 2,
+        length: 3,
         child: Scaffold(
           appBar: AppBar(
             title: Text(widget.title),
             bottom: TabBar(
                 tabs: [
-                  Text('Home'),
-                  Text('Chamaaaa'),
-                ]
+                  Tab(child: Text('Home',style: TextStyle(color: Colors.deepPurple),),),
+                  Tab(child: Text('Chamaaaa',style: TextStyle(color: Colors.deepPurple),),),
+                  Tab(child: Text('Tab03',style: TextStyle(color: Colors.deepPurple),),),
+                ],
+
             ),
           ),
           body: Container(
@@ -98,6 +100,7 @@ class _HomeState extends State<Home> {
               children: [
                 _tab1(),
                 _tab2(),
+                _tab3(),
               ],
             ),
           ),
@@ -126,5 +129,14 @@ class _HomeState extends State<Home> {
       final randColor = new Random();
       troca = randColor.nextInt(6);
     });
+  }
+
+  Padding _widgetTextField() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: TextField(
+        controller: myController,
+      ),
+    );
   }
 }
