@@ -115,29 +115,30 @@ class _HomeState extends State<Home> {
     return Container(
         margin: EdgeInsets.only(top: 23),
         child: Column(
-      children: [
-        Container(
-            child: Container(
-              height: 30,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20)),
-                color: Colors.yellow,
+        children: [
+            Expanded(
+              flex: 1,
+              child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20)),
+                      color: Colors.yellow,
+                    ),
+                    width: 400,
+                    alignment: Alignment.center,
+                child: Text(
+                  "Sistema Único de Saúde",
+                  style: TextStyle(
+                      color: Color(0xFF438966),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      letterSpacing: 0.7),
+                ),
               ),
-              width: 400,
-              alignment: Alignment.center,
-              child: Text(
-                "Sistema Único de Saúde",
-                style: TextStyle(
-                    color: Color(0xFF438966),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    letterSpacing: 0.7),
-              ),
-            )),
-        Container(
-          height: 200,
+            ),
+          Expanded(
+            flex: 7,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -148,7 +149,6 @@ class _HomeState extends State<Home> {
                   fit: BoxFit.fill
                 )
               ),
-              width: 400,
               child: Column(
                 children: [
                   Container(
@@ -212,23 +212,23 @@ class _HomeState extends State<Home> {
                                     height: 40,
                                   )
                                 ],
-                              )),
+                              )
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  Row(
-                    children: [
-                      Expanded(
+                  Expanded(
+                      child: Row(
+                        children: [
+                        Expanded(
                           flex: 3,
                           child: Container(
-                            height: 71,
+                            height: 65,
                             child: Container(
-                              margin: EdgeInsets.only(top: 8),
                               child: Column(
                                 children: [
                                   Container(
-                                      margin: EdgeInsets.only(bottom: 1.5),
                                       child: Padding(
                                         padding: EdgeInsets.only(
                                             top: 1.5,
@@ -254,7 +254,7 @@ class _HomeState extends State<Home> {
                                         color: Colors.white, fontSize: 9),
                                   ),
                                   Text(
-                                    "Em caso de roubo ou perda, comunicar ao Dique Saúde",
+                                    "Em caso de roubo ou perda, comunicar ao Disque Saúde",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 9),
                                   ),
@@ -268,11 +268,12 @@ class _HomeState extends State<Home> {
                                 ],
                               ),
                             ),
-                          )),
+                          )
+                      ),
                       Expanded(
                           flex: 1,
                           child: Container(
-                              height: 71,
+                              height: 50,
                               child: Container(
                                 alignment: Alignment.bottomRight,
                                 child: Row(
@@ -289,14 +290,19 @@ class _HomeState extends State<Home> {
                                         width: 30),
                                   ],
                                 ),
-                              ))),
+                              )
+                          )
+                      ),
                     ],
+                    )
                   )
                 ],
               ),
-            )),
+            )
+          ),
       ],
-    ));
+    )
+    );
   }
 
   GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
