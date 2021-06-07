@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
             Expanded(
               flex: 1,
               child: Container(
-                  height: 300,
+                  height: 230,
                   alignment: Alignment.topCenter,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
                       image: new DecorationImage(
                           image: new AssetImage('assets/images/fundo_front.png'),
                           fit: BoxFit.fill)),
-                  height: 250,
+                  height: 230,
                   child: Container(
                       margin: EdgeInsets.only(left: 10, top: 20),
                       alignment: Alignment.topLeft,
@@ -113,11 +113,12 @@ class _HomeState extends State<Home> {
 
   _renderBack() {
     return Container(
+        margin: EdgeInsets.only(top: 23),
         child: Column(
       children: [
-        Expanded(
-            flex: 1,
+        Container(
             child: Container(
+              height: 30,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
@@ -135,16 +136,17 @@ class _HomeState extends State<Home> {
                     letterSpacing: 0.7),
               ),
             )),
-        Expanded(
-            flex: 7,
+        Container(
+          height: 200,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(20),
                     bottomRight: Radius.circular(20)),
-                  image: new DecorationImage(
-                      image: new AssetImage('assets/images/fundo2.png'),
-                      fit: BoxFit.fill)
+                image: new DecorationImage(
+                    image: new AssetImage('assets/images/fundo2.png'),
+                  fit: BoxFit.fill
+                )
               ),
               width: 400,
               child: Column(
@@ -172,7 +174,7 @@ class _HomeState extends State<Home> {
                               child: Row(
                                 children: [
                                   Expanded(
-                                    flex: 2,
+                                    flex: 3,
                                     child: Text(
                                       "Data Nasc.: 13/12/1988",
                                       style: TextStyle(
@@ -194,7 +196,7 @@ class _HomeState extends State<Home> {
                                 ],
                               )),
                           Container(
-                              margin: EdgeInsets.only(top: 8),
+                              margin: EdgeInsets.only(top: 5),
                               alignment: Alignment.center,
                               child: Column(
                                 children: [
@@ -207,7 +209,7 @@ class _HomeState extends State<Home> {
                                   Image.asset(
                                     "assets/images/bar_code.png",
                                     width: 140,
-                                    height: 35,
+                                    height: 40,
                                   )
                                 ],
                               )),
@@ -270,7 +272,7 @@ class _HomeState extends State<Home> {
                       Expanded(
                           flex: 1,
                           child: Container(
-                              height: 50,
+                              height: 71,
                               child: Container(
                                 alignment: Alignment.bottomRight,
                                 child: Row(
@@ -338,7 +340,7 @@ class _HomeState extends State<Home> {
             children: [Expanded(child: _renderCard(context))],
           ),
           Container(
-            margin: EdgeInsets.only(top: 150),
+            margin: EdgeInsets.only(top: 220),
             child: Image.asset("assets/images/banner_saude.png",),
           ),
 
