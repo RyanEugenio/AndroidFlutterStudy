@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   _renderBackground() {
     return Container(
         decoration: BoxDecoration(
-        color:Opacity ,
+          color: Colors.amber
     ));
   }
 
@@ -42,8 +42,9 @@ class _HomeState extends State<Home> {
 
   _renderCard(BuildContext context) {
     return Card(
-      elevation: 5.0,
+      elevation: 0,
       margin: EdgeInsets.only(left: 32.0, right: 32.0, top: 50.0, bottom: 100.0),
+      color: Colors.amber,
       child: FlipCard(
         flipOnTouch: true,
         direction: FlipDirection.HORIZONTAL,
