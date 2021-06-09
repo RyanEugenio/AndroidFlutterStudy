@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
   Widget _tab(){
     return Column(
       children: [
-        Text('ASOHDFSOAIJDFASFASDFAS'),
+        Text('Teste Texto'),
       ],
     );
   }
