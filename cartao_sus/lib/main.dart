@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
 import 'views/views.dart';
 
-void main() => runApp(Aplicativo());
+void main() => runApp(App());
