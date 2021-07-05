@@ -1,0 +1,1 @@
+export 'package:market_flutter/repository/market_repository.dart';
